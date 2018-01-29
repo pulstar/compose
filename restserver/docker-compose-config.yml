@@ -1,0 +1,27 @@
+version: "3"
+services:
+
+  server-config:
+    image: israelagoeiro/devdoo-server-config-image:1.0
+    container_name: devdoo-server-config
+    ports:
+      - "5555:5555"
+    networks:
+      default:
+        ipv4_address: 192.168.0.15
+    volumes:
+      #- //c/Users/Acer/Documents/Python/teste/logs:/server-config/logs
+      - /home/ubuntu/logs:/server-config/logs
+
+networks:
+  default:
+    external:
+      name: devdoo
+
+#networks:
+#  devdoo:
+#    driver: bridge
+#    ipam:
+#      driver: default
+#      config:
+#        - subnet: 192.168.0.0/24

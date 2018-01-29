@@ -1,0 +1,22 @@
+version: "3"
+services:
+
+  server-broker:
+    image: israelagoeiro/devdoo-server-broker-image:1.0
+    container_name: devdoo-server-broker
+    ports:
+      - "4444:4444"
+    networks:
+      default:
+        ipv4_address: 192.168.0.20
+    environment:
+      SERVER_KEY: 243eab943e47af59e8713914d8539
+      PORT: 3333
+    volumes:
+      #- //c/Users/Acer/Documents/Python/teste/logs:/server-broker/logs
+      - /home/ubuntu/logs:/server-broker/logs
+
+networks:
+  default:
+    external:
+      name: devdoo

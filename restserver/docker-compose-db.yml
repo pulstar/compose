@@ -1,0 +1,24 @@
+version: "3"
+services:
+
+  server-mongodb:
+    image: mongo:3.0.2
+    container_name: devdoo-server-mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      default:
+        ipv4_address: 192.168.0.25
+    working_dir: /
+    environment:
+      SERVER_KEY: dasasdfsdfs3e47af59e8713914d8539
+      PORT: 3333
+    volumes:
+      #- /home/ubuntu/server-db/data:/data/db
+    logging:
+      driver: "json-file"
+
+networks:
+  default:
+    external:
+      name: devdoo

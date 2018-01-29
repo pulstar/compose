@@ -1,0 +1,23 @@
+version: "3"
+services:
+
+  server-rest:
+    image: israelagoeiro/devdoo-server-rest-image:1.0
+    container_name: devdoo-server-rest
+    ports:
+      - "8080:8080"
+    networks:
+      default:
+        ipv4_address: 192.168.0.10
+    environment:
+      SERVER_KEY: 243eab943e47af59e8713914d8539
+      SERVER_NAME: "devdoo-server-rest"
+      PORT: 3333
+    volumes:
+      #- //c/Users/Acer/Documents/Python/teste/logs:/server-rest/logs
+      - /home/ubuntu/logs:/server-rest/logs
+
+networks:
+  default:
+    external:
+      name: devdoo
