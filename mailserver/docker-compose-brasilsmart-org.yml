@@ -141,6 +141,8 @@ services:
     image: mariadb:10.2
     container_name: mariadb
     restart: unless-stopped
+    ports:
+      - "3306:3306"
     # Info : These variables are ignored when the volume already exists (if databases was created before).
     environment:
       - MYSQL_ROOT_PASSWORD=m@ilS3rv3rP4$$
