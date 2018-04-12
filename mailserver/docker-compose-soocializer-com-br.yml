@@ -50,8 +50,8 @@ services:
     # - "995:995"     # POP3S      SSL/TLS  - Optional - For webmails/desktop clients
       - "4190:4190"   # SIEVE      STARTTLS - Optional - Recommended for mail filtering
     environment:
-      - DBPASS=m4ilS3rv3rP4ss                        # MariaDB database password (required)
-      - RSPAMD_PASSWORD=m4ilS3rv3rP4ss               # Rspamd WebUI password (required)
+      - DBPASS=mudar123                        # MariaDB database password (required)
+      - RSPAMD_PASSWORD=mudar123               # Rspamd WebUI password (required)
     # - ADD_DOMAINS=aa.tld, www.bb.tld...      # Add additional domains separated by commas (needed for dkim keys etc.)
     # - ENABLE_POP3=true                       # Enable POP3 protocol
     # - ENABLE_FETCHMAIL=true                  # Enable fetchmail forwarding
@@ -88,7 +88,7 @@ services:
       - traefik.backend.port=8888
       - traefik.docker.network=http_network
     environment:
-      - DBPASS=m4ilS3rv3rP4ss
+      - DBPASS=mudar123
     depends_on:
       - mailserver
       - mariadb
@@ -143,10 +143,10 @@ services:
     restart: unless-stopped
     # Info : These variables are ignored when the volume already exists (if databases was created before).
     environment:
-      - MYSQL_ROOT_PASSWORD=m4ilS3rv3rP4ss
+      - MYSQL_ROOT_PASSWORD=mudar123
       - MYSQL_DATABASE=postfix
       - MYSQL_USER=postfix
-      - MYSQL_PASSWORD=m4ilS3rv3rP4ss
+      - MYSQL_PASSWORD=mudar123
     volumes:
       - /mnt/docker/mysql/db:/var/lib/mysql
     networks:
